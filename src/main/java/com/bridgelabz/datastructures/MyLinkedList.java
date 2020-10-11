@@ -10,21 +10,21 @@ public class MyLinkedList<T> {
 	}
 
 	/* Add First */
-	public void addFirst(INode newNode) {
+	public void addFirst(INode<T> newNode) {
 		if (this.tail == null) {
 			this.tail = newNode;
 		}
 		if (head == null) {
 			head = newNode;
 		} else {
-			INode tempNode = this.head;
+			INode<T> tempNode = this.head;
 			this.head = newNode;
 			this.head.setNext(tempNode);
 		}
 	}
 
 	/* Add Last */
-	public void addLast(INode newNode) {
+	public void addLast(INode<T> newNode) {
 		if (this.head == null) {
 			this.head = newNode;
 		}
@@ -43,22 +43,32 @@ public class MyLinkedList<T> {
 	}
 
 	/* Delete/Pop First Node */
-	public void pop() {
+	public INode<T> popFirst() {
+		INode<T> tempNode = this.head;
 		this.head = this.head.getNext();
+		return tempNode;
 	}
 
-	public void printMyNodes() {
+	/* Delete Pop Last Node */
+	public INode<T> popLast() {
+		INode<T> tempNode = head;
+		while (!(tempNode.getNext().equals(tail))) {
+			tempNode = tempNode.getNext();
+		}
+		this.tail = tempNode;
+		tempNode = tempNode.getNext();
+		return tempNode;
+	}
+
+	/* Search Node with given key */
+	public INode searchNode(T key) {
 		INode tempNode = this.head;
-		StringBuffer displayNode = new StringBuffer("My Nodes: ");
-		while (tempNode.getNext() != null) {
-			displayNode.append(tempNode.getData());
-			if (!tempNode.equals(this.tail)) {
-				displayNode.append("->");
+		while (tempNode != null) {
+			if (tempNode.getData() == key) {
+				return tempNode;
 			}
 			tempNode = tempNode.getNext();
 		}
-		displayNode.append(tempNode.getData());
-		System.out.println(displayNode);
+		return null;
 	}
-
 }
