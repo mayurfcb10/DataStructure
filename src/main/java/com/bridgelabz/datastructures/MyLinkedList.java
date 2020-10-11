@@ -36,6 +36,11 @@ public class MyLinkedList<T> {
 		}
 	}
 
+	public void insertNode(INode<Integer> myFirstNode, INode<Integer> mySecondNode) {
+		mySecondNode.setNext(myFirstNode.getNext());
+		myFirstNode.setNext(mySecondNode);
+	}
+
 	public void printMyNodes() {
 		INode tempNode = this.head;
 		StringBuffer displayNode = new StringBuffer("My Nodes: ");
@@ -48,7 +53,6 @@ public class MyLinkedList<T> {
 		}
 		displayNode.append(tempNode.getData());
 		System.out.println(displayNode);
-
 	}
 
 }
