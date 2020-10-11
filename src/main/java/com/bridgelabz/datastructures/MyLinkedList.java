@@ -36,9 +36,15 @@ public class MyLinkedList<T> {
 		}
 	}
 
+	/* Insert Node Between Nodes */
 	public void insertNode(INode<Integer> myFirstNode, INode<Integer> mySecondNode) {
 		mySecondNode.setNext(myFirstNode.getNext());
 		myFirstNode.setNext(mySecondNode);
+	}
+
+	/* Delete/Pop First Node */
+	public void pop() {
+		this.head = this.head.getNext();
 	}
 
 	public void printMyNodes() {
