@@ -5,8 +5,8 @@ public interface INode<T> {
 
 	T getData();
 
-	void setNext(INode next);
+	void setNext(INode<T> next);
 
-	INode getNext();
+	INode<T> getNext();
 
 }
