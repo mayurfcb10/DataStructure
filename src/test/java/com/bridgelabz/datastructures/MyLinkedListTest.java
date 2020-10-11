@@ -109,4 +109,20 @@ public class MyLinkedListTest {
 		Assert.assertEquals(true, result);
 	}
 
+	/* Search dataNode and Insert the Node */
+	@Test
+	public void DeleteNodeFromLinkedlistIfDeletedShouldReturnSizeAndReturnTrue() {
+		MyNode<Integer> myFirstNode = new MyNode<>(70);
+		MyNode<Integer> mySecondNode = new MyNode<>(40);
+		MyNode<Integer> myThirdNode = new MyNode<>(30);
+		MyNode<Integer> myFourthNode = new MyNode<>(56);
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.addFirst(myFirstNode);
+		myLinkedList.addFirst(mySecondNode);
+		myLinkedList.addFirst(myThirdNode);
+		myLinkedList.addFirst(myFourthNode);
+		myLinkedList.popNode(40);
+		int size = myLinkedList.getSize();
+		Assert.assertEquals(3, size);
+	}
 }
