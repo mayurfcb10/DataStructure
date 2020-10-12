@@ -111,5 +111,17 @@ public class MyLinkedList<T extends Comparable<T>> {
 			tempNode = tempNode.getNext();
 		}
 	}
+	
+
+	/* Function to delete node */
+	public INode<T> delete(T key) {
+		INode<T> deleteNode = searchNode(key);
+		INode<T> tempNode = head;
+		while (!tempNode.getNext().equals(deleteNode)) {
+			tempNode = tempNode.getNext();
+		}
+		tempNode.setNext(deleteNode.getNext());
+		return deleteNode;
+	}
 
 }
