@@ -157,6 +157,7 @@ public class MyLinkedListTest {
 		Assert.assertEquals(peek, myFirstNode);
 	}
 
+	/* Check Stack peek, pop or not */
 	@Test
 	public void IfStackIsPopOrPeekShouldReturnTrue() {
 		Stack<Integer> stack = new Stack<>();
@@ -172,6 +173,7 @@ public class MyLinkedListTest {
 		Assert.assertEquals(popStack, myFirstNode);
 	}
 
+	/* Create Queue */ 
 	@Test
 	public void IfQueueIsCreatedShouldReturnTrue() {
 		Queue<Integer> queue = new Queue<>();
@@ -185,6 +187,7 @@ public class MyLinkedListTest {
 		Assert.assertEquals(peek, myFirstNode);
 	}
 
+	/* check dequeue operation */
 	@Test
 	public void InQueueIfNodeIsDequeuedShouldReturnTrue() {
 		Queue<Integer> queue = new Queue<>();

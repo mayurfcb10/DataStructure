@@ -64,7 +64,7 @@ public class MyLinkedList<T extends Comparable<T>> {
 	public INode searchNode(T key) {
 		INode tempNode = this.head;
 		while (tempNode != null) {
-			if (tempNode.getData() == key) {
+			if (tempNode.getData().equals(key)) {
 				return tempNode;
 			}
 			tempNode = tempNode.getNext();
@@ -81,6 +81,7 @@ public class MyLinkedList<T extends Comparable<T>> {
 		tempNode.setNext(tempNode.getNext().getNext());
 	}
 
+	/* get size */
 	public int getSize() {
 		int size = 0;
 		INode tempNode = head;
